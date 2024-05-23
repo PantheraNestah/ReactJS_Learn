@@ -1,0 +1,71 @@
+
+$primary: #c29938;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+a {
+    color: $primary;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+header {
+    nav {
+        ul {
+            list-style-type: none;
+        }
+    }
+}
+
+.sect_stack {
+    margin: 2rem 0;
+}
+.sect_stack_container {
+    position: relative;
+    .center-line {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 90%;
+        background-color: $primary;
+    
+    }
+    .stack_list{
+        position: relative;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    li {
+        position: relative;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.1);
+    }
+    .item:nth-child(odd) {
+        margin-left: 50%;
+    }
+    .item:nth-child(even) {
+        margin-right: 50%;
+    }
+    .item::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        height: 2px;
+        width: 60%;
+        background-color: rgba(0, 0, 0, 0.3);
+        transform: translateY(-50%);
+    }
+    .item:nth-child(odd)::before {
+        right: 120%;
+    }
+    .item:nth-child(even)::before {
+        left: 120%;
+    }
+}
