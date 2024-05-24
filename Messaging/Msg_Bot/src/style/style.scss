@@ -1,4 +1,59 @@
 
 
+@import "../../node_modules/bootstrap/scss/_functions";
+
+@import "../../node_modules/bootstrap/scss/_variables";
+
+@import "../../node_modules/bootstrap/scss/_mixins";
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+/* body {
+    background-color: $orange-100;
+} */
+
+a {
+    text-decoration: none;
+}
+
+.login-section {
+    height: 29rem;
+    box-shadow: 0.5px 0.5px 10px 1px rgba(0, 0, 0, 0.3);
+    margin-top: 4rem;
+    background-image: url("/imgs/image5.jpg");
+    background-attachment: fixed;
+    background-position: left center;/*  
+    background-repeat: no-repeat; */
+    .section_header_title {
+        font-size: 25px;
+    }
+}
+.login-section_form {
+    form {
+        min-height: 12rem;
+        width: 400px;
+        position: relative;
+    }
+    .form_input-group {
+        input {
+            border: 1px solid $primary;
+            outline: none;
+            border-radius: 2px;
+            width: 250px;
+        }
+    }
+    .social-media-login {
+        margin-top: 0.5rem;
+        button {
+            color: $blue-500;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+    .form_reg_link {
+        font-size: 12px;
+        position: absolute;
+        top: calc(4%);
+        right: calc(10%);
+    }
+}
