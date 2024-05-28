@@ -99,15 +99,16 @@ a {
             height: 35vh;
             overflow-y: auto;
         }
-        .user_chat {
-            border-radius: 8px;
-            min-width: 4rem;
-            max-width: 60%;
+        .eg_guide {
+            span {
+                font-size: 14px;
+            }
         }
-        .bot_chat {
+        .user_chat, .bot_chat {
             border-radius: 8px;
             min-width: 4rem;
             max-width: 60%;
+            font-size: 12px;
         }
         .prompt_area {
             position: -webkit-sticky;

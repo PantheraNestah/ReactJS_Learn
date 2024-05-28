@@ -46,7 +46,6 @@ export default function BotArea() {
     const handleChange = (e) => {
         setUserInput(e.target.value);
     }
-
     /* implement auto scrolling to the lattest child element in the .body element */
     useEffect(() => {
         const body = document.querySelector(".body");
@@ -64,11 +63,11 @@ export default function BotArea() {
                 </div>
                 <div className="section_bot_interface d-none">
                     <div className="header d-flex align-items-center justify-content-between">
-                        <h4 className="text-center col-9">PolluBot</h4>
+                        <h4 className="text-center col-9 d-flex align-items-center justify-content-center">PolluBot <img className="ms-2" src="/imgs/icons8-bot-48_3.png" width={"35px"} alt="bot"/></h4>
                         <span className="chat-minimize me-3">-</span>
                     </div>
                     <div className="body col-10 mx-auto">
-                        <div>
+                        <div className="eg_guide mb-3">
                             <span>Hi! I'm PolluBot, your personal air pollution assistant. How can I help you today?</span>
                         </div>
                         {user_chats.map((chat, index) => (
