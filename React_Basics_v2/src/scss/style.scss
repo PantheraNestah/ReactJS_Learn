@@ -1,21 +1,36 @@
+@import "../../node_modules/bootstrap/scss/_functions";
 
-$primary: #c29938;
+@import "../../node_modules/bootstrap/scss/_variables";
+
+@import "../../node_modules/bootstrap/scss/_mixins";
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 a {
-    color: $primary;
+    color: $gray-600;
     text-decoration: none;
     &:hover {
-        text-decoration: underline;
+        font-weight: bold;
+        color: $gray-700;
     }
 }
 header {
+    padding-top: 3rem;
+    padding-left: 3rem;
+    margin-bottom: 3rem;
     nav {
+        margin-right: 5rem;
         ul {
             list-style-type: none;
         }
     }
+}
+.legend_desc {
+   height: 17rem;
+   margin-left: 4rem;
+}
+.legend_img_cont {
+    margin-right: 4rem;
 }
 
 .sect_stack {
