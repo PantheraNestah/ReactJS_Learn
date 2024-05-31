@@ -90,25 +90,43 @@ a {
             font-weight: bold;
             border-radius: 6px 6px 0 0;
             top: 0;
-            padding: 10px 5px;
+            padding: 5px;
         }
         .chat-minimize {
             cursor: pointer;
         }
         .body {
-            height: 35vh;
+            height: 50vh;
+            padding-top: 1.5rem;
             overflow-y: auto;
         }
+        .body::-webkit-scrollbar {
+            width: 10px;
+        }
+        .body::-webkit-scrollbar-track {
+            border-radius: 8px;
+        }
+        .body::-webkit-scrollbar-thumb {
+            border-radius: 8px;
+            background-color: $gray-400;
+        }
+        .body::-webkit-scrollbar-track-piece {
+            height: 50px;
+        }
+
         .eg_guide {
             span {
                 font-size: 14px;
             }
         }
         .user_chat, .bot_chat {
-            border-radius: 8px;
+            border-radius: 3px;
             min-width: 4rem;
-            max-width: 60%;
+            max-width: 80%;
             font-size: 12px;
+        }
+        .bot_chat {
+            border-radius: 1px 1px 1px 1px;
         }
         .prompt_area {
             position: -webkit-sticky;
@@ -119,10 +137,11 @@ a {
             textarea {
                 resize: none;
                 width: 80%;
-                height: 80%;
+                height: 70%;
                 outline: none;
                 padding: 0.5rem;
                 font-size: 16px;
+                outline: 1px $gray-500;
                 border-radius: 5px;
             }
         }

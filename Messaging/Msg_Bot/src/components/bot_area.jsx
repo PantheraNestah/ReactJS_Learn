@@ -1,8 +1,12 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useRef} from "react"
 
 export default function BotArea() {
-    const [user_chats, setUserChats] = useState([]);
+    /* const [user_chats, setUserChats] = useState([]); */
     const [user_input, setUserInput] = useState("");
+    const [AI_output, setAIOutput] = useState("");
+    const [response_load, setResponseLoad] = useState("done");
+    const [all_chats, setAllChats] = useState([]);
+    const chatBodyRef = useRef(null);
 
     useEffect(() => {
         const laucher = document.querySelector(".laucher");
@@ -25,10 +29,18 @@ export default function BotArea() {
             if (e.key === "Enter") {
                 e.preventDefault();
                 const trim_input = user_input.trim();
+                setAllChats([...all_chats, {type: "user", msg_text: trim_input}])
                 if(trim_input) {
-                    const res = "I'm sorry, I don't understand that question. Please try again.";
-                    setUserChats([...user_chats, {type: "user", msg_text: trim_input}, {type: "bot", msg_text: res}]);
-                    setUserInput("");
+                    setResponseLoad("loading")
+                    get_response(trim_input).then((resp) => {
+                        console.log(resp);
+                        resp = resp.AI_response
+                        resp = resp.join("<br/>");
+                        setAIOutput(resp);
+                        setAllChats((prev) => [...prev, {type: "bot", msg_text: resp}]);
+                        setUserInput("")
+                        setResponseLoad("done")
+                    });
                 }
             }
         }
@@ -38,19 +50,33 @@ export default function BotArea() {
         }
     }, [user_input]);
 
-    const get_response = (question) => {
-        const res = "I'm sorry, I don't understand that question. Please try again.";
-        setUserChats([...user_chats, {type: "bot", msg_text: res}]);
-        console.log(question);
+    const get_response = async (question) => {
+        const resp_promise = await fetch(
+            "http://localhost:8000/chatbot/",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({"prompt":question})
+            }
+        );
+        const resp_body = await resp_promise.json();
+        return resp_body;
     }
     const handleChange = (e) => {
         setUserInput(e.target.value);
     }
     /* implement auto scrolling to the lattest child element in the .body element */
     useEffect(() => {
-        const body = document.querySelector(".body");
-        body.scrollTop = body.scrollHeight;
-    }, [user_chats]);
+        const body = chatBodyRef.current;
+        if (body) {
+        body.scrollTo({
+            top: body.scrollHeight,
+            behavior: 'smooth'
+        });
+        }
+    }, [all_chats, response_load]);
     
     return (
         <>
@@ -66,22 +92,19 @@ export default function BotArea() {
                         <h4 className="text-center col-9 d-flex align-items-center justify-content-center">PolluBot <img className="ms-2" src="/imgs/icons8-bot-48_3.png" width={"35px"} alt="bot"/></h4>
                         <span className="chat-minimize me-3">-</span>
                     </div>
-                    <div className="body col-10 mx-auto">
+                    <div className="body col-11 ms-3 pe-4 pb-3" ref={chatBodyRef}>
                         <div className="eg_guide mb-3">
-                            <span>Hi! I'm PolluBot, your personal air pollution assistant. How can I help you today?</span>
+                            <Chat_item msg_text={"Hi! I'm PolluBot, your personal air pollution assistant. <br/>How can I help you today?"} type={"bot"} />
                         </div>
-                        {user_chats.map((chat, index) => (
-                            (chat.type === "user") ? (
-                                console.log(chat.msg_text),
-                                <div key={index} className="d-flex justify-content-end">
-                                    <p className="user_chat bg-primary text-white p-2">{chat.msg_text}</p>
-                                </div>
-                            ) : (
-                                <div key={index} className="d-flex justify-content-start">
-                                    <p className="bot_chat bg-secondary text-white p-1">{chat.msg_text}</p>
-                                </div>
-                            )
+                        {all_chats.map((chat, index) => (
+                            console.log(all_chats),
+                            <Chat_item msg_text={chat.msg_text} type={chat.type} />
                         ))}
+                        {response_load !== "done" &&
+                            <div className="d-flex justify-content-start align-items-center ps-4 pb-3 mb-2">
+                                <img src="/imgs/load_spinner2_darker.svg" alt="Loading..." width={"40px"} />
+                            </div>
+                        }
                     </div>
                     <div className="prompt_area">
                         <div className="mx-auto col-md-10 d-flex align-items-center justify-content-center">
@@ -91,5 +114,22 @@ export default function BotArea() {
                 </div>
             </div>
         </>
+    )
+}
+
+function Chat_item({msg_text, type}){
+    return (
+        (type === "user") ? (
+            <div className="d-flex justify-content-end">
+                <p className="user_chat bg-primary text-white p-2">{msg_text}</p>
+            </div>
+        ) : (
+            <div className="d-flex justify-content-start align-items-end">
+                <div className="d-flex align-items-end justify-content-end">
+                    <img src="/imgs/bot_icon_animated.gif" width={"40px"} />
+                </div>
+                <p className="bot_chat bg-secondary text-white p-1" dangerouslySetInnerHTML={{ __html: msg_text }}></p>
+            </div>
+        )
     )
 }
