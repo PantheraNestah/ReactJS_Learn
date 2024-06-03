@@ -11866,8 +11866,28 @@ header nav ul {
 }
 
 .legend_desc {
-  height: 17rem;
+  height: 27rem;
   margin-left: 4rem;
+}
+.legend_desc h2, .legend_desc .h2 {
+  font-size: 38px;
+}
+.legend_desc .cv_connect {
+  width: 270px;
+}
+.legend_desc .cv_connect a {
+  min-width: 120px;
+  padding: 10px 8px;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+}
+.legend_desc .cv_connect a:nth-child(2) {
+  color: #6c757d;
+}
+.legend_desc .cv_connect a:hover {
+  color: #0d6efd;
 }
 
 .legend_img_cont {
@@ -11875,7 +11895,7 @@ header nav ul {
 }
 
 .sect_stack {
-  margin: 2rem 0;
+  margin: 4rem 0;
 }
 
 .sect_stack_container {

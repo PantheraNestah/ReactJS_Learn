@@ -26,15 +26,34 @@ header {
     }
 }
 .legend_desc {
-   height: 17rem;
+   height: 27rem;
    margin-left: 4rem;
+   h2 {
+       font-size: 38px;
+   }
+   .cv_connect {
+        width: 270px;
+        a {
+            min-width: 120px;
+            padding: 10px 8px;
+            color: white;
+            font-weight: bold;
+            border-radius: 25px;
+            box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1); &:nth-child(2){
+                color: $secondary;
+            }
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
 }
 .legend_img_cont {
     margin-right: 4rem;
 }
 
 .sect_stack {
-    margin: 2rem 0;
+    margin: 4rem 0;
 }
 .sect_stack_container {
     position: relative;
