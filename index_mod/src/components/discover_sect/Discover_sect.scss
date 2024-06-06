@@ -1,0 +1,61 @@
+$primary: #13357B;
+$secondary: #1f05e6;
+$light: #F2F2F2;
+$dark: #14141F;
+$bg-light: #E6E8FB;
+
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/_mixins";
+@import "~bootstrap/scss/bootstrap";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.discover_sect {
+    height: 25rem;
+    margin-bottom: 4rem;
+    .topic_area {
+        gap: 12px;
+        .title {
+            font-size: 13px;
+        }
+        h3 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 15px;
+        }
+    }
+    .summary_area_container {
+        background-color: rgba(20, 20, 31, 0.2);
+        height: 20rem;
+    }
+    .summary_area {
+        .summary_area_div {
+           span {
+                display: block;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: $dark;
+            }
+            h4 {
+                font-size: 18px;
+                margin: 0.8rem 0;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+}

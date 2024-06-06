@@ -1,0 +1,69 @@
+$primary: #13357B;
+$secondary: #1f05e6;
+$light: #F2F2F2;
+$dark: #14141F;
+$bg-light: #E6E8FB;
+
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/_mixins";
+@import "~bootstrap/scss/bootstrap";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+
+.legend_section {
+    margin: 0;
+    height: 100vh;
+    margin-bottom: 2rem;
+    position: relative;
+
+    .legend_container {
+        position: absolute;
+        top: 10rem;
+        right: 9rem;
+    }
+    .legend_cont {
+        background-color: rgba(255, 255, 255, 0.4);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: inset 0 0 10px rgb(19, 53, 123);
+        width: 30rem;
+        gap: 15px;
+
+        .legend_title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .cont_more {
+            width: 110px;
+            height: 45px;
+            border-radius: 6px;
+            background-color: $primary;
+            a {
+                color: $light;
+            }
+        }
+    }
+    .legend_stats {
+        margin-top: 2rem;
+        div {
+            height: 150px;
+            width: 13rem;
+            border-radius: 6px;
+            background-color: rgb(19, 53, 123);
+            box-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.2);
+        }
+    }
+}

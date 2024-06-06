@@ -1,4 +1,8 @@
 import React, {useState, useEffect, useRef} from "react"
+import botIcon from "../assets/imgs/icons8-bot-48.png"
+import load_spinner from "../assets/imgs/load_spinner2_darker.svg"
+import botIconAnime from "../assets/imgs/bot_icon_animated.gif"
+import '../css/style.min.css'
 
 export default function BotArea() {
     /* const [user_chats, setUserChats] = useState([]); */
@@ -83,13 +87,13 @@ export default function BotArea() {
             <div className="section_bot col-md-3">
                 <div className="laucher d-flex justify-content-end">
                     <span className="laucher-btn btn btn-outline-primary col-4 me-2 d-flex justify-content-center align-items-center border">
-                        <img className="me-2" src="/imgs/icons8-bot-48.png" width={"50px"} alt="bot"/>
+                        <img className="me-2" src={botIcon} width={"50px"} alt="bot"/>
                         <span>Chat</span>
                     </span>
                 </div>
                 <div className="section_bot_interface d-none">
                     <div className="header d-flex align-items-center justify-content-between">
-                        <h4 className="text-center col-9 d-flex align-items-center justify-content-center">PolluBot <img className="ms-2" src="/imgs/icons8-bot-48_3.png" width={"35px"} alt="bot"/></h4>
+                        <h4 className="text-center col-9 d-flex align-items-center justify-content-center">PolluBot <img className="ms-2" src={botIcon} width={"35px"} alt="bot"/></h4>
                         <span className="chat-minimize me-3">-</span>
                     </div>
                     <div className="body col-11 ms-3 pe-4 pb-3" ref={chatBodyRef}>
@@ -102,7 +106,7 @@ export default function BotArea() {
                         ))}
                         {response_load !== "done" &&
                             <div className="d-flex justify-content-start align-items-center ps-4 pb-3 mb-2">
-                                <img src="/imgs/load_spinner2_darker.svg" alt="Loading..." width={"40px"} />
+                                <img src={load_spinner} alt="Loading..." width={"40px"} />
                             </div>
                         }
                     </div>
@@ -126,7 +130,7 @@ function Chat_item({msg_text, type}){
         ) : (
             <div className="d-flex justify-content-start align-items-end">
                 <div className="d-flex align-items-end justify-content-end">
-                    <img src="/imgs/bot_icon_animated.gif" width={"40px"} />
+                    <img src={botIconAnime} width={"40px"} />
                 </div>
                 <p className="bot_chat bg-secondary text-white p-1" dangerouslySetInnerHTML={{ __html: msg_text }}></p>
             </div>

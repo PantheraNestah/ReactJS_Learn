@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import '../css/style.min.css'
 
 export default function LoginSection() {
   useEffect(() => {

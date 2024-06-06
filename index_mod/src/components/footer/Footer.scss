@@ -1,0 +1,36 @@
+$primary: #13357B;
+$secondary: #1f05e6;
+$light: #F2F2F2;
+$dark: #14141F;
+$bg-light: #E6E8FB;
+
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/_mixins";
+@import "~bootstrap/scss/bootstrap";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+
+footer {
+    height: 3rem;
+    padding: 1.2rem 0;
+    background-color: $dark;
+    font-size: 14px;
+    bottom: 0;
+    .right_holder {
+        span {
+            font-size: 14px;
+            color: $light;}
+    }
+}
