@@ -1,0 +1,61 @@
+$txt-primary: rgba(211, 238, 253, 0.9);
+
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/_mixins";
+@import "~bootstrap/scss/bootstrap";
+
+a.nav_link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px; /* Adjust the offset */
+    height: 2px; /* Adjust the thickness */
+    background-color: $txt-primary; /* Initial underline color */
+    transform: scaleX(0); /* Start with the underline hidden */
+    transform-origin: bottom right; /* Origin of the animation */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+  }
+
+  a.nav_link:hover::after {
+    transform: scaleX(1); /* Expand the underline */
+    transform-origin: bottom left; /* Origin of the animation */
+    background-color: $txt-primary; /* Change underline color on hover */
+  }
+
+.app_nav {
+    padding: 1rem 2rem;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(20, 137, 235, 0.28);
+    z-index: 50;
+    a {
+        position: relative;
+        text-decoration: none;
+        font-size: 15px;
+        color: $txt-primary;
+    }
+    h1 {
+        font-size: 26px;
+        margin: 0;
+    }
+    ul {
+        list-style-type: none;
+        margin-bottom: 0;
+    }
+    .nav_links {
+        gap: 1rem;
+
+    }
+    .reg_links {
+        gap: 12px;
+        color: rgba(211, 238, 253, 0.7);
+        a {
+            font-size: 12px;
+        }
+    }
+}

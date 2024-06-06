@@ -1,0 +1,67 @@
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/_mixins";
+@import "~bootstrap/scss/bootstrap";
+
+.app_hero {
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+.hero_content {
+    width: 450px;
+    padding: 1.5rem;
+    border-radius: 6px;
+    background-color:  rgba(20, 137, 235, 0.15);;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    gap: 1.5rem;
+    position: absolute;
+    top: 8rem;
+    left: 4rem;
+    h2 {
+        font-size: 45px;
+        font-weight: bold;
+        margin: 0;
+    }
+    p {
+        font-size: 16px;
+        margin: 0;
+        color: rgb(204, 204, 204);
+    }
+    .search_area {
+        width: 350px;
+        border-radius: 5px;
+        background-color: rgba(204, 204, 204, 0.9);
+        gap: 6px;
+        padding: 5px 8px;
+        input {
+            width: 250px;
+            padding: 0.4rem;
+            font-size: 16px;
+            border: 1px solid rgb(204, 204, 204);
+            border-radius: 6px;
+        }
+        button {
+            padding: 4px 0.8rem;
+            font-size: 16px;
+        }
+    }
+    .hero_stats {
+        color: rgb(204, 204, 204);
+        gap: 2rem;
+        .stat_figure {
+            font-size: 30px;
+            margin: 0;
+        }
+        .stat_plus {
+            color: $orange-400;
+            font-size: 38px;
+            font-weight: bold;
+        }
+        .stat_name {
+            font-size: 16px;
+            margin: 0;
+        }
+    }
+}
+
