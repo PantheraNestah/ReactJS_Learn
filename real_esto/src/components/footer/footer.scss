@@ -1,0 +1,26 @@
+footer {
+    padding: 1rem 0;
+    background-color: rgba(20, 137, 235, 0.28);
+}
+.footer_cont {
+    padding: 1rem 0;
+    height: 15rem;
+    .contact_socials {
+        gap: 4rem;
+        span, a {
+            font-size: 14px;
+        }
+        i {
+            font-size: 20px;
+        }
+        h5 {
+            font-size: 20px;
+        }
+        .address {
+            gap: 0.8rem;
+        }
+    }
+    .socials_cont {
+        gap: 1rem;
+    }
+}

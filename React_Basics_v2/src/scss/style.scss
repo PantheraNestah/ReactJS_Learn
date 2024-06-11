@@ -6,18 +6,19 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-a {
-    color: $gray-600;
-    text-decoration: none;
-    &:hover {
-        font-weight: bold;
-        color: $gray-700;
-    }
-}
+
 header {
     padding-top: 3rem;
     padding-left: 3rem;
     margin-bottom: 3rem;
+    a.nav_link {
+        color: $gray-600;
+        text-decoration: none;
+        &:hover {
+            font-weight: bold;
+            color: $gray-700;
+        }
+    }
     nav {
         margin-right: 5rem;
         ul {
@@ -34,6 +35,7 @@ header {
    .cv_connect {
         width: 270px;
         a {
+            text-decoration: none;
             min-width: 120px;
             padding: 10px 8px;
             color: white;
