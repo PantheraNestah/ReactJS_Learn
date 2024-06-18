@@ -10,6 +10,7 @@ const Head_meta = () => {
             {/* Icon Font Stylesheet */}
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
         </head>
     )
 }

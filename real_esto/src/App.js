@@ -6,6 +6,7 @@ import Nav from './components/Nav/Nav';
 import Hero from './components/Hero/Hero';
 import Prop_sect from './components/Properties_section/Prop_sect';
 import Listing_section from './components/Properties_carousel/Listing_section';
+import Values from './components/Values_section/Values';
 import Scripts from './scripts/App_scripts';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Nav />
       <Hero />
       <Listing_section />
+      <Values />
       <Footer />
       <Scripts />
     </div>

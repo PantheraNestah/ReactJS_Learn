@@ -40,6 +40,9 @@ const Listing_section = () => {
                         <span class="carousel-control-next-icon"></span>
                     </button>
                 </div>
+                <p className="col-lg-5 mx-auto text-center">
+                    <a href="#">Discover</a>
+                </p>
             </div>
         </section>
     );
