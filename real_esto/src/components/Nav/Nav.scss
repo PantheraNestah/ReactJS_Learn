@@ -5,6 +5,10 @@ $txt-primary: rgba(211, 238, 253, 0.9);
 @import "~bootstrap/scss/_mixins";
 @import "~bootstrap/scss/bootstrap";
 
+.nav_link {
+    color: rgba(211, 238, 253, 0.7);
+}
+
 a.nav_link::after {
     content: '';
     position: absolute;
