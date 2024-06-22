@@ -5,7 +5,6 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
 .app_footer {
-    background-color: var(--bs-secondary-color);
     height: 20rem;
     margin-top: 4rem;
     padding-top: 2rem;
@@ -25,6 +24,7 @@
     }
     a {
         text-decoration: none;
+        color: $gray-600;
         font-size: inherit;
     }
     .communities_sect ul, .contact_sect ul {
@@ -34,19 +34,22 @@
         padding-left: 0;
     }
     .contact_sect ul {
+        color: $gray-600;
+        gap: 10px;
         i {
             font-size: 22px;
         }
-        gap: 10px;
     }
     .socials_sect ul {
         width: 180px;
         i {
             font-size: 22px;
+            color: $green-800;
         }
     }
     .rights_sect {
         margin: 0;
-        font-size: 15px;
+        font-size: 14px;
+        color: $gray-600;
     }
 }

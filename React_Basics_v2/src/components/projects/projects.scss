@@ -1,0 +1,54 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+
+.projects_section {
+    margin: 2rem 0;
+    h2 {
+        margin-left: 4rem;
+    }
+}
+.project {
+    gap: 5rem;
+    padding: 20px;
+    margin: 3rem 0;
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    .project_details {
+        gap: 1rem;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 15px;
+        margin-bottom: 1.5rem;
+    }
+    a {
+        text-decoration: none;
+        font-size: 13px;
+    }
+    .project_stack {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        gap: 1.5rem;
+        color: $green-400;
+        li {
+            font-size: 16px;
+        }
+    }
+    .view_proj_link {
+        color: $orange-400;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+}
+.project_photo {
+    width: 400px;
+    height: 300px;
+    box-shadow: 1px 1px 10px 0.2px rgba(0,0,0,0.2);
+}

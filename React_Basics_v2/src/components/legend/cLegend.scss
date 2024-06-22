@@ -1,0 +1,63 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+.legend_desc {
+    height: 27rem;
+    margin-left: 4rem;
+    .name_n_tag {
+        padding-left: 0;
+    }
+    h2 {
+        font-size: 78px;
+        color: $green-800;
+        margin-left: 0;
+    }
+    span.my_tags {
+        color: $orange-400;
+        font-weight: 700;
+    }
+    .cv_connect {
+         width: 270px;
+         gap: 2rem;
+         a.resume {
+             text-decoration: none;
+             min-width: 120px;
+             padding: 10px 8px;
+             font-weight: bold;
+             border-radius: 25px;
+             background-color: $orange-400;
+             color: $green-700;
+             box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1); 
+             &:hover {
+                 color: $primary;
+             }
+         }
+         .socials {
+            gap: 1.5rem;
+            a {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: 0.5px solid $green-600;
+            }
+            i {
+                font-size: 16px;
+                color: $green-600;
+            }
+            a:hover {
+                background-color: $green-600;
+                i {
+                    color: white;
+                }
+            }
+         }
+     }
+ }
+ .legend_img_cont {
+     margin-right: 4rem;
+ }
+ .section_title {
+    color: $green-800;
+ }

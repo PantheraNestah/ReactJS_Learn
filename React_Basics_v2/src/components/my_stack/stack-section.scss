@@ -1,0 +1,81 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+.sect_stack {
+    margin: 4rem 0;
+    h4 {
+        margin-left: 4rem;
+        color: $green-800;
+    }
+}
+.sect_stack_container {
+    position: relative;
+    .stack_row {
+        margin: 1rem 0;
+        padding: 1rem 0;
+        gap: 4rem;
+        div {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            height: 160px;
+            border: 0.5px solid rgba(0, 0, 0, 0.4);
+            background-color: $green-900;
+        }
+        img {
+            width: 100px;
+            background: transparent;
+        }
+    }
+    .more_stacks {
+        color: $orange-400;
+        font-weight: 700;
+    }
+    /* .center-line {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 90%;
+        background-color: $primary;
+    
+    }
+    .stack_list{
+        position: relative;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    li {
+        position: relative;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.1);
+    }
+    .item:nth-child(odd) {
+        margin-left: 50%;
+    }
+    .item:nth-child(even) {
+        margin-right: 50%;
+    }
+    .item::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        height: 2px;
+        width: 60%;
+        background-color: rgba(0, 0, 0, 0.3);
+        transform: translateY(-50%);
+    }
+    .item:nth-child(odd)::before {
+        right: 120%;
+    }
+    .item:nth-child(even)::before {
+        left: 120%;
+    } */
+}
