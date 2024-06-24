@@ -1,27 +1,69 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./all_listing.scss";
 import Prop_img1 from "../../assets/imgs/real_esto_img6.jpg";
 
 const All_listing = () => {
+  const [isFixed, setIsFixed] = useState(false);
+
+    const handleScroll = () => {
+        const offset = window.pageYOffset;
+    
+        if (offset >= 80) {
+          setIsFixed(true);
+        } else {
+          setIsFixed(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
-        <section className="w-100">
+        <section className="main_prop_listing w-100">
             <Side_bar />
-            <div className="search_area">
+            <div className={`search_area ${isFixed ? 'fixed' : ''}`}>
                 <div className="mx-auto d-flex align-items-center justify-content-center">
                     <input type="text" placeholder="Search by Keyword Name, location..." />
-                    <span className="btn btn-primary text-center">Search</span>
+                    <span className="btn text-center">Search</span>
                 </div>
             </div>
-            <div className="listing_section d-flex flex-wrap align-items-center justify-content-center">
-                <Property />
-                <Property />
-                <Property />
-                <Property />
-                <Property />
-                <Property />
-                <Property />
-                <Property />
+            <div className="latest_listing">
+                <h4 className="">Latest in the Market</h4>
+                <div className="d-flex flex-wrap align-items-center justify-content-center">
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                </div>
+            </div>
+            <div className="offer_listing">
+                <h4>Best Offers</h4>
+                <div className="d-flex flex-wrap align-items-center justify-content-center">
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                </div>
+            </div>
+            <div className="all_listing">
+                <h4>All Properties</h4>
+                <div className="d-flex flex-wrap align-items-center justify-content-center">
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                    <Property />
+                </div>
             </div>
         </section>
     )
@@ -79,11 +121,17 @@ const Property = () => {
         <div className="property_card">
             <img src={Prop_img1} alt="" />
             <div className="property_info">
-                <h4>Property name</h4>
+                <h5>Property name</h5>
+                <ul className="d-flex align-items-center justify-content-between">
+                    <li>Investment</li>
+                    <li>Luxury</li>
+                    <li>Prime Location</li>
+                </ul>
                 <p>Location</p>
                 <p>Price</p>
             </div>
         </div>
+        /* investment luxury prime location */
     )
 };
 

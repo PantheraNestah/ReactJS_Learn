@@ -3,6 +3,11 @@
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/bootstrap";
 
+.main_prop_listing {
+    margin-bottom: 4rem;
+}
+
+
 .listing_side_bar {
     width: 15rem;
     position: fixed;
@@ -40,32 +45,79 @@
     margin-left: 18rem;
     div {
         width: 450px;
-        padding: 1rem;
+        gap: 1.5rem;
+        padding: 0.5rem;
+        border-radius: 20px;
         background-color: rgba(211, 238, 253, 0.7);
     }
     input {
         width: 300px;
         height: 40px;
+        background: transparent;
+        border: none;
+        outline: none;
     }
     span {
         height: 40px;
+        background-color: $gray-600;
+        color: rgba(255, 255, 255, 0.9);
+        &:hover {
+            background-color: $gray-500;
+        }
     }
 }
 
-.listing_section {
-    margin-top: 1rem;
+.latest_listing, .offer_listing, .all_listing {
+    margin-top: 4rem;
     margin-left: 18rem;
-    gap: 5rem;
+    h4 {
+        padding-left: 2rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+    div {
+        gap: 4rem;
+    }
+}
+.offer_listing, .all_listing {
+    margin-top: 2rem;
+}
+.fixed {
+    position: fixed;
+    margin-top: 6rem;
+    margin-left: 0;
+    top: 0;
+    left: calc(50% + 15rem - 24%);
+    z-index: 1000;
+    div {
+        background-color: rgba(211, 238, 253, 0.95);
+    }
 }
 
 .property_card {
     width: 250px;
     height: 300px;
-    margin-top: 4rem;
+    padding-bottom: 1rem;
+    border-radius: 5px 5px 0 0;
     box-shadow: 1px 1px 10px 0.5px rgba(211, 238, 253, 0.7);
     img {
         width: 100%;
         height: 180px;
-        border-radius: 10px 10px 0 0;
+        border-radius: 5px 5px 0 0;
+    }
+    h5 {
+        margin: 0;
+        font-size: 18px;
+    }
+    p {
+        padding: 0.2rem;
+        margin: 0;
+    }
+    ul {
+        margin: 5px 0;
+        padding: 0 1.2rem;
+        font-size: 13px;
+        list-style-type: none;
+        color: $orange-400;
     }
 }

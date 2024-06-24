@@ -32,10 +32,11 @@ a.nav_link::after {
     padding: 1rem 2rem;
     justify-content: space-evenly;
     position: fixed;
+    height: 4rem;
     top: 0;
     right: 0;
     left: 0;
-    background-color: rgba(20, 137, 235, 0.28);
+    background-color: #186c8f/* rgba(20, 137, 235, 0.9) */;
     z-index: 50;
     a {
         position: relative;
